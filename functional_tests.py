@@ -44,16 +44,16 @@ class NewToDoVisitor(unittest.TestCase):
         )
 
         # she types "buy peacock feathers" into a ButtonBox
-        inputbox.send_keys('Buy peakcock feathers')
+        inputbox.send_keys('Buy peacock feathers')
 
         # the page updates and now the page says:
         # "1: buy peacock feathers" as a to-do list item
         inputbox.send_keys(Keys.ENTER)
-
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1: ')
+            any(row.text == '1: Buy peacock feathers' for row in rows),
+            "new todo item didn't appear in table"
         )
 
         # there is still a text book for another item, she enters
