@@ -14,9 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls import include # added this as suggested above
-import debug_toolbar            # django-debug-toolbar
+from django.urls import include, path # added this as suggested above
+import debug_toolbar                  # django-debug-toolbar
 
 
 admin.site.site_title = 'Babadook'
