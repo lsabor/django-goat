@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'playground',                   # this is our new app
     'debug_toolbar',                # pipenv install django-debug-toolbar
+    'todo',
 ]
 
 MIDDLEWARE = [
