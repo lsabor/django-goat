@@ -29,7 +29,8 @@ urlpatterns = [
     path('playground/', include('playground.urls')),  # any urls that begin with 'playground/' will be routed to ...
                                                       # if we pass 'playground/hello' it will match playground, and then send 'hello'
                                                       # to the url configuration module in the playground app - a.k.a. 'playground.urls'
-    path('',           include('playground.urls')),   # Poor form, but just rerouting plaground stuff to default page
+    path('',            include('playground.urls')),  # Poor form, but just rerouting plaground stuff to default page
     path('__debug__/',  include(debug_toolbar.urls)), # django-debug-toolbar
-    path('polls/',      include('polls.urls'))
+    path('polls/',      include('polls.urls')),
+    path('todo/',       include('todo.urls')),
 ]
