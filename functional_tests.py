@@ -69,6 +69,16 @@ class NewToDoVisitor(unittest.TestCase):
         self.fail('finish writing these tests')
 
 
+class NewPollVisitor(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+
+
+
+
+
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
 
