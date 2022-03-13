@@ -1,6 +1,7 @@
 from django.http import HttpRequest
 from django.test import TestCase
 from django.urls import resolve
+from django.template.loader import render_to_string
 
 from todo.views import index
 
@@ -15,6 +16,5 @@ class SmokeTest(TestCase):
     def test_todo_home_page_returns_correct_html(self):
         request = HttpRequest()
         response = index(request)
-        self.assertTrue(response.content.startswith(b'<html>'))
-        self.assertIn(b'<title>To-Do lists</title>',response.content)
-        self.assertTrue(response.content.strip().endswith(b'</html>'))
+        expected_html = render_to_string('todo/home_page.html')
+        self.assertEqual(response.content.decode(), expected_html)
