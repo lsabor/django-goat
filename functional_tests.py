@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 import unittest
 
@@ -7,8 +8,13 @@ import unittest
 class NewToDoVisitor(unittest.TestCase):
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        options = Options()
+        options.headless = True
+        self.browser = webdriver.Firefox(options = options)
         self.browser.implicitly_wait(3)
+        
+
+
 
     def tearDown(self):
         # satisfied, she ends session
