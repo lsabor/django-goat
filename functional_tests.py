@@ -72,8 +72,17 @@ class NewToDoVisitor(unittest.TestCase):
 class NewPollVisitor(unittest.TestCase):
 
     def setUp(self):
-        pass
+        options = Options()
+        options.headless = True
+        self.browser = webdriver.Firefox(options = options)
+        self.browser.implicitly_wait(3)
 
+    def tearDown(self):
+        # satisfied, she ends session
+        self.browser.quit()
+
+    def test_NAME_THIS_TEST(self):
+        pass
 
 
 
