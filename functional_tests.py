@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import unittest
 
 
@@ -25,15 +26,29 @@ class NewToDoVisitor(unittest.TestCase):
         self.browser.get('http://localhost:9000/todo/')
 
         # the default page title says todo, much better.
-        self.assertIn('To-Do',self.browser.title)
-        self.fail('finish writing these tests')
+        self.assertIn('To-Do', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('To-Do', header_text)
 
         # she is invited to endter a to-do item
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertEqual(
+            inputbox.get_attribute('placeholder'),
+            'Enter a to-do item'
+        )
 
         # she types "buy peacock feathers" into a ButtonBox
+        inputbox.send_keys('Buy peakcock feathers')
 
-        # when she hits enter, the page updates and now the page says:
+        # the page updates and now the page says:
         # "1: buy peacock feathers" as a to-do list item
+        inputbox.send_keys(Keys.ENTER)
+
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertTrue(
+            any(row.text == '1: ')
+        )
 
         # there is still a text book for another item, she enters
         # "use peacock feathers"
@@ -45,6 +60,7 @@ class NewToDoVisitor(unittest.TestCase):
 
         # she goes to that url and finds her todo list
 
+        self.fail('finish writing these tests')
 
 
 if __name__ == '__main__':
