@@ -81,8 +81,23 @@ class NewPollVisitor(unittest.TestCase):
         # satisfied, she ends session
         self.browser.quit()
 
-    def test_NAME_THIS_TEST(self):
-        pass
+    def test_can_respond_to_a_poll(self):
+        # Bill gets goes to the poll site
+        self.browser.get('http://localhost:9000/polls/')
+
+        # sees the title says polls, he's in the right place
+        self.assertIn('Polls', self.browser.title)
+
+        # browses to 3rd most recent question
+        third = self.browser.find_element_by_id('most_recent_3')
+        
+
+
+        # sees choices and selects the one he likes
+
+
+        # satisfied, he does nothing else
+
 
 
 
