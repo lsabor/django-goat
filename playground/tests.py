@@ -8,12 +8,9 @@ from django.test import TestCase
 
 
 
-<<<<<<< HEAD
 
 # adding some comments on my own
-=======
 # adding this weird text to sf1, not sf2
-# fetch related
+# changed this text
 
->>>>>>> sf2/main
 
