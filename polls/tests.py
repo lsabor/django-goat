@@ -14,7 +14,7 @@ class PoleDanceTest(TestCase):
         self.assertEqual(found.func, index)
 
     def test_poll_home_page_returns_correct_html(self):
-        request = HttpRequest()
+        request = HttpRequest() # this change was made in experimental only, let's see what happens
         response = index(request)
         expected_html = render_to_string('polls/index.html')
         self.assertEqual(response.content.decode(), expected_html) 
