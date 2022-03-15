@@ -22,7 +22,10 @@ class PoleDanceTest(TestCase):
         self.assertEqual(response.content.decode(), expected_html) 
 
 
-
+# I'm adding some changes to the end of this document
+# they're just comments and were made on experimental,
+# they are designed not to conflict with recent
+# comments made in this same file in main placed well above
 
 
 
