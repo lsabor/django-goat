@@ -17,7 +17,8 @@ class PoleDanceTest(TestCase):
         request = HttpRequest()
         response = index(request)
         expected_html = render_to_string('polls/index.html')
-        self.assertEqual(response.content.decode(), expected_html)
+        self.assertEqual(response.content.decode(), expected_html) 
+        
 
 
 
