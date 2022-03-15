@@ -15,10 +15,10 @@ class PoleDanceTest(TestCase):
 
     def test_poll_home_page_returns_correct_html(self):
         request = HttpRequest()
-        response = index(request)
+        response = index(request) 
         expected_html = render_to_string('polls/index.html')
         self.assertEqual(response.content.decode(), expected_html) 
-        
+
 
 
 
