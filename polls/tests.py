@@ -7,6 +7,8 @@ from polls.views import index
 
 # Create your tests here.
 
+# I'm adding a supufluous line here that will just be seen in main
+# a second line I guess
 class PoleDanceTest(TestCase):
 
     def test_root_url_resolves_to_polls_home_page_view(self):
