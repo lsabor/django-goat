@@ -3,23 +3,20 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 import unittest
 
+import time
 
 
 class NewToDoVisitor(unittest.TestCase):
 
     def setUp(self):
         options = Options()
-        options.headless = True
+        # options.headless = True
         self.browser = webdriver.Firefox(options = options)
         self.browser.implicitly_wait(3)
-        
-
-
 
     def tearDown(self):
         # satisfied, she ends session
         self.browser.quit()
-
 
     def test_can_start_a_list_and_retrieve_it_later(self):
         # Barb log on and try to find our storefront
@@ -73,7 +70,7 @@ class NewPollVisitor(unittest.TestCase):
 
     def setUp(self):
         options = Options()
-        options.headless = True
+        # options.headless = True
         self.browser = webdriver.Firefox(options = options)
         self.browser.implicitly_wait(3)
 

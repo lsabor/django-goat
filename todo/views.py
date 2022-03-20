@@ -5,4 +5,6 @@ from django.http import HttpResponse
 
 
 def index(request):
+    if request.method == 'POST':
+        return HttpResponse(request.POST['item_text'])
     return render(request, 'todo/home_page.html')
